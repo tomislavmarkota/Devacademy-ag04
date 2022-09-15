@@ -1,0 +1,43 @@
+<div class="container-fluid header-background">
+    <h1>Enjoy your travels</h1>
+    <h3>with Staycation and collect rewards</h3>
+    <h5>Book now & save 10% or more today</h5>
+  </div>
+  <div class="search-container">
+    <app-filter
+    [filterSettings]="filterSettings"
+    ></app-filter>
+  </div>
+  <div class="popular-locations">
+    <div class="section-title">
+      <h1>Popular locations</h1>
+      <a routerLink="/locations">View all locations</a>
+    </div>
+    <div class="locations-wrapper">
+      <div
+        class="location-wrapper"
+        *ngFor="let location of (locations$ | async) | slice: 0:5"
+      >
+      <a [routerLink]="['/locations', location.id ]">
+         <app-location-box [location]="location"></app-location-box>
+      </a>
+       
+      </div>
+    </div>
+  </div>
+  <div class="homes-guest-love">
+    <div class="section-title">
+      <h1>Home guests love</h1>
+      <a routerLink="/recommendations">View all homes</a>
+    </div>
+    <div class="accommodations-box-wrapper">
+      <div class="accommodation-box-wrapper"
+      *ngFor="let accommodation of (accomodations$ | async) | slice:0:4 let i = index;"
+      >
+        <app-accommodation-box
+          [accommodation]="accommodation"
+          [id]="accommodation.id!"
+        ></app-accommodation-box>
+      </div>
+    </div>
+  </div>

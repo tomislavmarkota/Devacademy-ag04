@@ -1,0 +1,51 @@
+<header class="container-fluid">
+  <div class="row d-flex align-items-center justify-content-center">
+    <div class="col-md-1 col-9 d-flex">
+      <mat-icon *ngIf="!isMenuOpen && isAuth" class="burger-menu" (click)="toggleMenu()"
+        >menu</mat-icon
+      >
+      <a 
+      routerLink="/" 
+      class="staycation"
+      >
+       <h6>Staycation</h6> 
+      </a>
+    </div>
+    <nav
+      class="col-md-9 d-flex justify-content-center"
+      [class.is-open]="isMenuOpen"
+    >
+      <div *ngIf="isMenuOpen" [class.is-opened]="isMenuOpen">
+        <div (click)="toggleMenu()">
+          <mat-icon class="burger-menu">close </mat-icon>
+          <span>close</span>
+        </div>
+      </div>
+      <a 
+      *ngIf="isAuth"
+      routerLink="/locations"
+      routerLinkActive="active"
+      (click)="toggleMenu()"
+      >Locations</a>
+      <a 
+      *ngIf="isAuth"
+      routerLink="/my-places"
+      routerLinkActive="active"
+      (click)="toggleMenu()"
+      >My places</a>
+      <a 
+      *ngIf="isAuth"
+      routerLink="/my-bookings"
+      routerLinkActive="active"
+      (click)="toggleMenu()"
+      >My bookings</a>
+    </nav>
+    <div class="col-md-1 col-3 text-end">
+      <button 
+      *ngIf="isAuth"
+      type="button"
+      (click)="logout()"
+      >LOGOUT</button>
+    </div>
+  </div>
+</header>

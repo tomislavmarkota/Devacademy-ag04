@@ -1,0 +1,15 @@
+<div class="main-wrapper">
+    <h4>Stays in ....</h4>
+    <div>
+      <div class="accommodations-wrapper">
+        <div
+          class="accommodation-box-wrapper col-3"
+          *ngFor="let accomodation of accomodations"
+        >
+          <app-accommodation-box
+            [accommodation]="accomodation!"
+          ></app-accommodation-box>
+        </div>
+      </div>
+    </div>
+</div>

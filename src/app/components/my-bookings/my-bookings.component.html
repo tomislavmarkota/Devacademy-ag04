@@ -1,0 +1,32 @@
+<div class="main-wrapper">
+  <h4>My bookings</h4>
+  <h5>Upcoming bookings</h5>
+  <div>
+    <div class="accommodations-wrapper">
+      <div
+        class="accommodation-box-wrapper col-3"
+        *ngFor="let upcomingBooking of upcomingBookings$ | async"
+      >
+        <app-accommodation-box
+          [accommodation]="upcomingBooking.accomodation!"
+          [id]="upcomingBooking.accomodation?.id!"
+        ></app-accommodation-box>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <div class="past-bookings-wrapper">
+    <h5>Past bookings</h5>
+    <div class="accommodations-wrapper">
+      <div
+        class="accommodation-box-wrapper col-3"
+        *ngFor="let pastBooking of pastBookings$ | async"
+      >
+        <app-accommodation-box
+          [accommodation]="pastBooking.accomodation!"
+          [id]="pastBooking.accomodation?.id!"
+        ></app-accommodation-box>
+      </div>
+    </div>
+  </div>
+</div>

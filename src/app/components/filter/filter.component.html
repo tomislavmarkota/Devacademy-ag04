@@ -1,0 +1,76 @@
+<form [formGroup]="form!" (ngSubmit)="onSubmit()">
+  <div class="filter-item" *ngIf="filterSettings?.where">
+    <ng-select
+      name="select"
+      class="select-places"
+      formControlName="selectLocationId"
+    >
+      <ng-option *ngFor="let location of locations" [value]="location.id">{{
+        location.name
+      }}</ng-option>
+    </ng-select>
+  </div>
+
+  <div class="filter-item" *ngIf="filterSettings?.checkIn">
+    <mat-form-field appearance="outline" floatLabel="always" class="calendar">
+      <mat-label>Check in</mat-label>
+      <input 
+      matInput 
+      [matDatepicker]="picker"
+      formControlName="checkIn"
+      />
+      <mat-datepicker-toggle matPrefix [for]="picker">
+        <img src="../assets/icons/calendar.svg" matDatepickerToggleIcon />
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="filterSettings?.checkOut" class="filter-item">
+    <mat-form-field appearance="outline" floatLabel="always" class="calendar">
+      <mat-label>Check out</mat-label>
+      <input 
+      matInput 
+      [matDatepicker]="picker2" 
+      formControlName="checkOut"
+      />
+      <mat-datepicker-toggle matPrefix [for]="picker2">
+        <img src="../assets/icons/calendar.svg" matDatepickerToggleIcon />
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="filterSettings?.howMany" class="filter-item">
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>How many people</mat-label>
+      <img matPrefix src="../assets/icons/peopleIcon.svg" />
+      <input 
+      matInput 
+      formControlName="personCount"
+      />
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="filterSettings?.typeofAccommodation" class="filter-item">
+    <ng-select
+      formControlName="type"
+      name="select"
+      class="select-accommodation"
+    >
+      <ng-option
+        *ngFor="let accommodation of accommodationType"
+        [value]="accommodation.name"
+        >{{ accommodation.name }}</ng-option
+      >
+    </ng-select>
+  </div>
+
+  <div class="filter-item" *ngIf="filterSettings?.submitBtn">
+    <input 
+    class="btn-global" 
+    type="submit" 
+    value="search" 
+    />
+  </div>
+</form>

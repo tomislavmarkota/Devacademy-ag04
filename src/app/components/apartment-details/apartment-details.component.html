@@ -1,0 +1,44 @@
+<div class="main-wrapper">
+  <div class="img-cover">
+    <img [src]="accommodationDetails?.location?.imageUrl" />
+  </div>
+  <div class="content-wrapper">
+    <div>
+      <div class="title-container">
+        <div>
+          <h2>{{ accommodationDetails?.title }}</h2>    
+          <div>
+            <app-stars
+            [categorization]="accommodationDetails?.categorization!"
+            ></app-stars>
+          </div>
+        </div>
+        <p class="subtitle">{{accommodationDetails?.subtitle}}</p>
+        <h5
+          class="cancelation-text"
+          *ngIf="accommodationDetails?.freeCancelation"
+        >
+          Free cancellation available
+        </h5>
+      </div>
+      <div class="description-text">
+        {{accommodationDetails?.description}}
+      </div>
+
+    </div>
+    
+    <div class="property-info-wrapper">
+      <div class="property-info">
+        <h6>Property info</h6>
+        <p>{{ accommodationDetails?.personCount + " guests" }}</p>
+        <p>{{ accommodationDetails?.type }}</p>
+        <p>{{ "EUR " + accommodationDetails?.price + " per night" }}</p>
+        <p>{{ accommodationDetails?.location?.name + " city" }}</p>
+        <p>{{ accommodationDetails?.location?.postalCode }}</p>
+        <button class="btn-global"
+        (click)="navigateToReservation()"
+        >Book your stay</button>
+      </div>
+    </div>
+  </div>
+</div>

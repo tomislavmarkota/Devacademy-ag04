@@ -1,0 +1,23 @@
+<div class="login-wrapper">
+  <div class="login-form-wrapper">
+    <h2>Log in</h2>
+    <span>Get started for free</span>
+    <form [formGroup]="form!" (ngSubmit)="onSubmit()">
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" />
+      </mat-form-field>
+      <mat-checkbox 
+      class="form-item"
+      formControlName="termsAndConditions"
+      >
+        I accept the Terms and Conditons
+      </mat-checkbox>
+      <button type="submit" class="btn-global">log in</button>
+    </form>
+  </div>
+</div>

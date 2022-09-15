@@ -1,0 +1,35 @@
+<div class="main-wrapper">
+  <div class="title-wrapper">
+    <h1>My places</h1>
+    <div>
+      <a routerLink="/add-new">
+          <button class="btn-global">Add new place</button>
+      </a>
+    </div>
+  </div>
+    <div class="my-places-container">
+      <div 
+      *ngFor="let accommodation of accommodations"
+      class="my-place"
+      >
+        <div class="img-container">
+          <img class="accommodation-img" [src]="accommodation.location?.imageUrl"/>
+        </div>
+        <div class="text-container">
+            <h3>{{accommodation.title}}</h3>
+            <h6>{{accommodation.subtitle}}</h6>
+            <h5>Renting the entire unit</h5>
+            <div>
+              <button
+              (click)="onEditForm(accommodation.id!)"
+              >Edit</button>
+              <button
+              mat-raised-button
+              (click)="openDialog(accommodation.id!)"
+              >Delete place</button>
+            </div>
+        </div>
+      </div> 
+    </div>
+</div>
+

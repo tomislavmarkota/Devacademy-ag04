@@ -1,0 +1,79 @@
+@import "src/assets/styles/_vars.scss";
+
+.form-wrapper{
+    width: 40%;
+    padding: 20px;
+    @media (max-width:768px) {
+        width: 100%;
+        ::ng-deep .mat-form-field-infix{
+            width: 100%!important;
+        }
+    }
+}
+
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: $mint-2!important;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+    background-color: $mint-1!important;
+}
+
+.acc-form-item{
+    margin: 15px 0 15px 0px;
+    ::ng-deep .mat-form-field-label-wrapper{
+        left: 0!important;
+        top: -1.3em!important;
+    }
+}
+
+.description{
+    height: 124px!important;
+    ::ng-deep .mat-form-field-outline{
+        height: 124px!important;
+    }
+    ::ng-deep .mat-input-element{
+        caret-color: $coral-1!important;
+    }
+}
+
+.categorization{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 15px 0px;
+}
+
+.freeCancel{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0 15px 0px;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px 0 15px 0px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    &>div{
+        width: 165px;
+        @media (max-width:768px) {
+            width: 100%;
+        }
+    }
+}
+
+.location-postal-container{
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+
+

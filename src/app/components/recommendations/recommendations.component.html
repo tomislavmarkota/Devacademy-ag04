@@ -1,0 +1,18 @@
+<div class="main-wrapper">
+  <h1>Homes guests love</h1>
+  <p>235324 properties</p>
+  <div>
+    <app-filter [filterSettings]="filterSettings"></app-filter>
+
+    <div class="accommodations-wrapper">
+      <div
+        class="accommodation-box-wrapper col-3"
+        *ngFor="let accomodation of accomodations | async"
+      >
+        <app-accommodation-box
+          [accommodation]="accomodation"
+        ></app-accommodation-box>
+      </div>
+    </div>
+  </div>
+</div>

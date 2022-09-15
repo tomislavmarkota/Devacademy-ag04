@@ -1,0 +1,11 @@
+<ng-select 
+[(ngModel)]="selected" 
+name="select" 
+class="select-places"
+placeholder="Location"
+(change)="onChange()"
+>
+  <ng-option *ngFor="let location of locations$ | async" [value]="location">{{
+    location.name
+  }}</ng-option>
+</ng-select>

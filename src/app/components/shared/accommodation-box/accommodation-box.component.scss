@@ -1,0 +1,60 @@
+@import "src/assets/styles/_vars.scss";
+
+.accommodation-box-container {
+  a{
+    text-decoration: none;
+    color: $black-1;
+  }
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    margin: 20px 0 10px 0;
+  }
+  h6 {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 120%;
+    letter-spacing: 0.25px;
+    color: #adadad;
+  }
+  h5 {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 120%;
+    letter-spacing: 0.25px;
+    color: $teal-1;
+    margin-bottom: 13px;
+  }
+  @media (max-width: 768px) {
+    h3 {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.15px;
+    }
+    h6 {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.15px;
+    }
+    h5 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.15px;
+    }
+  }
+}
+
+.accommodation-img {
+  width: 100%;
+  max-height: max(10rem, 30vh);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+}

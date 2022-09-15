@@ -1,0 +1,24 @@
+<div class="accommodation-box-container">
+  <a
+  [routerLink]="['/accommodation', id]"
+  >
+    <div>
+      <img
+        class="accommodation-img"
+        [src]="accommodation.imageUrl"
+      />
+    </div>
+    <div>
+      <h3>{{ accommodation.title }}</h3>
+      <h6>{{ accommodation.subtitle }}</h6>
+      <h5>EUR {{ accommodation.price }}</h5>
+
+      <app-stars
+      [categorization]="accommodation.categorization"
+      ></app-stars>
+      
+    </div>
+  </a>
+</div>
+
+

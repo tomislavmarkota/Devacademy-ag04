@@ -1,0 +1,13 @@
+@import "src/assets/styles/_vars.scss";
+
+.mat-dialog-actions{
+    justify-content: flex-end;
+    gap: 32px
+}
+
+button{
+    border: none;
+    color: $mint-1;
+    background-color: transparent;
+    text-transform: uppercase;
+}

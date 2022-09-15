@@ -1,0 +1,14 @@
+<div class="main-wrapper">
+  <app-filter [filterSettings]="filterSettings"></app-filter>
+  <div class="accommodations-wrapper">
+    <div
+      class="accommodation-box-wrapper col-3"
+      *ngFor="let location of locations$ | async;"
+    >
+      <app-accommodation-box 
+      [accommodation]="location"
+      [id]="location.id!"
+      ></app-accommodation-box>
+    </div>
+  </div>
+</div>

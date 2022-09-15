@@ -1,0 +1,14 @@
+.locations-box-wrapper {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    flex: 0 0 25%;
+    padding: 10px 12px;
+    @media (max-width: 768px) {
+      flex: 0 0 50%;
+    }
+  }
+}

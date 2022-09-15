@@ -1,0 +1,127 @@
+@import 'src/assets/styles/_vars.scss';
+
+
+header {
+  background: $white-1;
+  box-shadow: 0px 4px 4px rgba(205, 205, 205, 0.25);
+  padding: 10px 76px;
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+  }
+}
+.burger-menu {
+  margin: 5px 10px;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+h6 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  margin: 0;
+  @media (max-width: 768px) {
+    line-height: 32px;
+  }
+}
+
+nav {
+  @media (max-width: 768px) {
+    display: none !important;
+    &.is-open {
+      z-index: 1000;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: flex-start !important;
+      width: 90%;
+      height: 100%;
+      position: fixed;
+      background-color: $white-1;
+      top: 0;
+      left: 0;
+      box-shadow: 100px -10px 10px 15px rgba(0, 0, 0, 0.2),
+        0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+        0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+      a:not(.staycation) {
+        padding: 20px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 0.15px;
+        color: $teal-1;
+      }
+    }
+  }
+}
+
+.is-opened {
+  display: flex;
+  justify-content: flex-end;
+  > div {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: $mint-1;
+    width: fit-content;
+  }
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+a:not(.staycation) {
+  color: $black-1;
+  margin: 0px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  &:hover {
+    color: $teal-1;
+    text-decoration: none ;
+  }
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 170%;   
+  letter-spacing: 0.4px;
+  @media (max-width: 768px) {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.46px;
+  }
+
+  &:hover {
+    color: $teal-1;
+    text-decoration: underline;
+  }
+}
+
+
+.staycation{
+  color: $black-1;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.active{
+  text-decoration: none;
+}

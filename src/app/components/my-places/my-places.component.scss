@@ -1,0 +1,164 @@
+@import "src/assets/styles/_vars.scss";
+
+
+h1, h3, h6, h5, p, button {
+  font-size: clamp(var(--min), var(--val), var(--max));
+}
+
+h1 {
+  --min: 1.5em; // minimum value
+  --val: 5vw; // preferred value = 5% viewport width
+  --max: 2em; // maximum value
+}
+
+h3{
+  --min: 0.7em; 
+  --val: 4vw; 
+  --max: 1.5em; 
+}
+h5{
+  --min: 0.5em; 
+  --val: 4vw; 
+  --max: 1em; 
+}
+h6{
+  --min: 0.5em; 
+  --val: 4vw; 
+  --max: 1em; 
+}
+
+button{
+  --min: 0.4em; 
+  --val: 3vw; 
+  --max: 1em;
+}
+
+p {
+  --min: 1em;
+  --val: 2.5vw;
+  --max: 2em;
+}
+
+
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 12px;   
+  button {
+    padding: 10px 20px;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.my-place {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .text-container, .img-container{
+    width: 100%;
+  }
+  h3 {
+    font-weight: 500;
+    //font-size: 20px;
+    line-height: 120%;
+    margin: 0px 0 10px 0;
+  }
+  h6 {
+    margin-bottom: 20px;
+    font-weight: 400;
+    //font-size: 15px;
+    line-height: 120%;
+    letter-spacing: 0.25px;
+    color: #adadad;
+  }
+  h5 {
+    font-weight: 500;
+    //font-size: 15px;
+    line-height: 120%;
+    letter-spacing: 0.25px;
+    color: $teal-1;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    h3 {
+      font-weight: 600;
+      //font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.15px;
+    }
+    h6 {
+      font-weight: 400;
+      //font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.15px;
+      margin-bottom: 10px;
+    }
+    h5 {
+      font-weight: 600;
+      //font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.15px;
+    }
+  }
+  button {
+    border: none;
+    background: transparent;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: 500;
+    //font-size: 14px;
+    line-height: 170%;
+    letter-spacing: 0.4px;
+  }
+  button:nth-of-type(1) {
+    color: $mint-1;
+  }
+  button:nth-of-type(2) {
+    color: $red-1;
+    margin-left: 28px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+    }
+  }
+}
+
+.my-places-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  .my-place {
+    width: 25%;
+    padding: 10px 12px;
+    @media (max-width: 950px) {
+      width: 33.3%;
+    }
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+.accommodation-img {
+  width: 100%;
+  max-height: max(10rem, 30vh);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+<div class="main-wrapper">
+  <h1>Book your stay</h1>
+  <div class="content-wrapper">
+    <div class="form-wrapper">
+      <form [formGroup]="form!" (ngSubmit)="onSubmit()">
+        <mat-form-field class="form-item" appearance="outline">
+          <mat-label>Full name</mat-label>
+          <input 
+          formControlName="name"
+          matInput 
+          type="text" 
+          />
+        </mat-form-field>
+        <mat-form-field class="form-item" appearance="outline">
+          <mat-label>Email adress</mat-label>
+          <input 
+          formControlName="email"
+          matInput 
+          type="email"
+           />
+        </mat-form-field>
+        <mat-form-field class="form-item" appearance="outline">
+          <mat-label>Number of guests</mat-label>
+          <input 
+          formControlName="personCount"
+          matInput 
+          type="number" 
+          />
+        </mat-form-field>
+
+        <div class="datepicker-wrapper">
+          <mat-form-field
+            class="form-item"
+            appearance="outline"
+            class="calendar"
+          >
+            <mat-label>Check in</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="checkIn" />
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <img src="../assets/icons/calendar.svg" matDatepickerToggleIcon />
+            </mat-datepicker-toggle>
+            <mat-datepicker 
+            
+            #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field
+            class="form-item"
+            appearance="outline"
+            class="calendar"
+          >
+            <mat-label>Check out</mat-label>
+            <input matInput [matDatepicker]="picker2"  formControlName="checkOut" />
+            <mat-datepicker-toggle matSuffix [for]="picker2">
+              <img src="../assets/icons/calendar.svg" matDatepickerToggleIcon />
+            </mat-datepicker-toggle>
+            <mat-datepicker 
+           
+            #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="btn-wrapper">
+          <button 
+          class="btn-global"
+          type="submit"
+          >Book your stay</button>
+        </div>
+      </form>
+    </div>
+    <div class="accommodation-info-container">
+      <div>
+        <img [src]="accommodationDetails?.location?.imageUrl" />
+      </div>
+      <div>
+        <h3>{{ accommodationDetails?.title }}</h3>
+        <div class="star-container">
+          <app-stars
+          [categorization]="accommodationDetails?.categorization!"
+          ></app-stars>
+
+        </div>
+        
+        <div>
+          <p>{{ accommodationDetails?.type }}</p>
+          <p>{{ accommodationDetails?.location?.name + " city" }}</p>
+          <p>{{ accommodationDetails?.location?.postalCode }}</p>
+          <p>{{ "EUR " + accommodationDetails?.price + " per night" }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

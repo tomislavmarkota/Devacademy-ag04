@@ -1,0 +1,148 @@
+@import "./assets/styles/vars";
+@import "~bootstrap/scss/bootstrap";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body { 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn-global {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 4px;
+  background-color: #40e0d0;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: 0.46px;
+}
+
+
+.main-wrapper {
+  padding: 50px 70px;
+  min-height: 90vh;
+  h1 {
+    padding: 1rem;
+  }
+  @media (max-width: 768px) {
+    padding: 50px 20px;
+  }
+}
+
+
+.ng-select-container {
+  height: 46px !important;
+  &:hover{
+    border:2px solid $coral-1;
+    .ng-placeholder::after{
+      color: $coral-1;
+    }
+  }
+}
+
+.ng-select.ng-select-opened>.ng-select-container{
+  border-color: $coral-1!important;
+}
+
+.ng-select.ng-select-opened>.ng-select-container .ng-arrow{
+  border-color: transparent transparent $coral-1!important;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+  background-color: $mint-3;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected, .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+  background-color: $mint-3;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container{
+  border-color: $coral-1;
+  box-shadow: none;
+}
+
+.ng-dropdown-panel{
+  border: 1px solid!important;
+  border-color: $coral-1 #ccc #ccc #ccc!important;
+}
+
+ng-select {
+  width: 100%;
+}
+
+.ng-input>input{
+ padding: 5px 0 0 25px!important;
+}
+
+mat-form-field{
+  width: 100%;
+  height: 46px!important;
+}
+
+.mat.form-field-flex{
+  height: 46px!important;
+}
+
+.mat-form-field-outline {
+  height: 46px!important;
+  top: 0!important;
+}
+
+.mat-form-field-wrapper{
+  padding-bottom: 0;
+  overflow: visible!important;
+}
+
+
+.mat-form-field-prefix{
+  top: 0!important;
+}
+
+.mat-form-field-infix{
+  padding: 0em 0 1em 0!important;
+  height: 46px!important;
+}
+
+input.mat-input-element{
+  padding-left: 5px;
+  caret-color: $coral-1;
+}
+
+.accommodations-wrapper {
+margin-top: 40px;
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+& > * {
+  flex: 0 0 25%;
+  padding: 10px 12px;
+  @media (max-width:768px){
+      flex: 0 0 50%;
+  }
+}
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick{
+  color: $coral-1!important;
+  
+}
+
+
+.mat-form-field.mat-focused .mat-form-field-label{
+  color: $coral-1;
+}

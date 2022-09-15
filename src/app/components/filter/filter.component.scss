@@ -1,0 +1,78 @@
+@import "src/assets/styles/_vars.scss";
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 14px;
+  height: 100%;
+  .filter-item:nth-of-type(1) {
+    width: 19%;
+  }
+  .filter-item:nth-of-type(2) {
+    width: 12%;
+  }
+  .filter-item:nth-of-type(3) {
+    width: 12%;
+  }
+  .filter-item:nth-of-type(4) {
+    width: 19%;
+  }
+  .filter-item:nth-of-type(5) {
+    width: 19%;
+  }
+  .filter-item:nth-of-type(6) {
+    width: 12%;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .filter-item:nth-of-type(1),
+    .filter-item:nth-of-type(2),
+    .filter-item:nth-of-type(3),
+    .filter-item:nth-of-type(4),
+    .filter-item:nth-of-type(5),
+    .filter-item:nth-of-type(6) {
+      width: 100%;
+    }
+  }
+}
+
+::ng-deep .ng-select-container {
+  overflow: visible !important;
+}
+
+.select-places ::ng-deep .ng-placeholder::before {
+  content: url("../../../assets/icons/carIcon.svg");
+}
+.select-places ::ng-deep .ng-placeholder::after {
+  content: "Where are you going?";
+  position: absolute;
+  font-size: 11px;
+  top: -10px;
+  left: 10px;
+  background: $white-1;
+}
+
+.select-accommodation ::ng-deep .ng-placeholder::before {
+  content: url("../../../assets/icons/accomodation.svg");
+}
+.select-accommodation ::ng-deep .ng-placeholder::after {
+  content: "What type of accommodation?";
+  position: absolute;
+  font-size: 11px;
+  top: -10px;
+  left: 10px;
+  background: $white-1;
+}
+
+
+
+::ng-deep .mat-icon-button {
+  width: 1.3em !important;
+}
+
+::ng-deep .filter-item .mat-form-field-label-wrapper{
+  top: -1.24375em!important;
+  left: -16px!important;
+}

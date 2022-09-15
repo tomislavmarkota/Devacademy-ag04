@@ -1,0 +1,98 @@
+<div class="form-wrapper">
+  <h1>{{ !id ? "Add new place" : "Edit place" }}</h1>
+  <form [formGroup]="form!" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="acc-form-item">
+      <mat-label>Listing name</mat-label>
+      <input type="text" matInput formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="acc-form-item">
+      <mat-label>Short description</mat-label>
+      <input
+        type="text"
+        matInput
+        maxlength="100"
+        formControlName="shortDesc"
+      
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="acc-form-item description">
+      <mat-label>Long description</mat-label>
+      <textarea matInput formControlName="longDesc" rows="6"></textarea>
+    </mat-form-field>
+
+    <div class="categorization">
+      <h5>Categorization</h5>
+      <div>
+        <img
+          *ngFor="let star of [1, 2, 3, 4, 5]"
+          (click)="setCategorization(star)"
+          [src]="
+            star <= form?.get('categorization')?.value
+              ? './assets/icons/starIcon.svg'
+              : './assets/icons/emptyStar.svg'
+          "
+          alt="star"
+        />
+      </div>
+    </div>
+
+    <mat-form-field appearance="outline" class="acc-form-item">
+      <mat-label>Accommodation type</mat-label>
+      <mat-select
+        formControlName="accommodationType"
+      
+      >
+        <mat-option *ngFor="let type of accommodationsType" [value]="type">
+          {{ type }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="acc-form-item">
+      <mat-label>Capacity</mat-label>
+      <input type="number" matInput formControlName="capacity" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="acc-form-item">
+      <mat-label>Price</mat-label>
+      <input type="number" matInput formControlName="price"  />
+    </mat-form-field>
+
+    <div class="location-postal-container">
+
+      <app-location-picker
+      class="acc-form-item"
+      (selectedLocation)="onLocationChange($event)"
+      ></app-location-picker>
+
+      <mat-form-field appearance="outline" class="acc-form-item">
+        <mat-label>Postal code</mat-label>
+        <input type="number" matInput formControlName="postalCode"  />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="acc-form-item">
+      <mat-label>Listing image URL</mat-label>
+      <input type="text" matInput formControlName="imageUrl" />
+    </mat-form-field>
+
+    <div class="freeCancel">
+      <h5>Free cancellation available</h5>
+      <mat-slide-toggle
+        formControlName="cancelation"
+       
+        class="toggle-btn"
+      ></mat-slide-toggle>
+    </div>
+
+    <div class="btn">
+      <div>
+        <button type="submit" class="btn-global">
+          {{ !id ? "Add new place" : "Save changes " }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

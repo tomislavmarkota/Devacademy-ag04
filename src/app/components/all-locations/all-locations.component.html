@@ -1,0 +1,16 @@
+<div class="main-wrapper">
+  <h1>All locations</h1>
+  <div>
+    <app-filter [filterSettings]="filterSettings"></app-filter>
+  </div>
+  <div class="locations-box-wrapper">
+    <div class="location-box-wrapper col-3" *ngFor="let location of locations$ | async;">
+      <a [routerLink]="[location.id]">
+        <app-location-box 
+        [location]="location"
+        ></app-location-box>
+      </a>
+    </div>
+  </div>
+</div>
+
